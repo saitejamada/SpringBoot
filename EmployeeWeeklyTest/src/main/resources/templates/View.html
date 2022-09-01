@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+body{background-color: lightblue}
+*{font-family: cursive;font-size:22px}
+#super{display: flex}
+</style>
+<body>
+<div id="super">
+<h1>Displaying All User Details</h1>
+<table border=5px>
+<tr>
+<th>Userid</th>
+<th>password</th>
+<th>role</th>
+</tr>
+<tr th:each="reg : ${list}">
+<td th:text="${reg.username}"></td>
+<td th:text="${reg.password}"></td>
+<td th:text="${reg.role}"></td>
+</table>
+</div>
+</body>
+</html>

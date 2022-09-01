@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+*{font-size:20px;font-family:cursive;}
+body{background-color:lightblue}
+div{height:300px;width:500px;margin-left:500px;margin-top:100px;background-color:white;border-radius:25px}
+input{border-radius:5px;margin:5px}
+form label {margin:20px}
+
+</style>
+
+</head>
+<body>
+<div>
+<form action="#" th:action="@{/validateuser}" th:object="${us}">
+<h1>login Form</h1>
+<label>User Name</label>
+<input type="text"  th:field="*{username}"/><br/>
+
+<label>User password</label>
+<input type="text"  th:field="*{password}"/><br/>
+
+<input type="submit" value="submit">
+<input type="reset" value="cancel">
+
+</form>
+
+</div>
+</body>
+</html>

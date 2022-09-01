@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+*{font-size:20px;font-family:cursive;}
+body{background-color:lightblue}
+div{height:300px;width:500px;margin-left:500px;margin-top:100px;background-color:white;border-radius:25px}
+input{border-radius:5px;margin:5px}
+form label {margin:20px}
+td {padding:5px;}
+</style>
+</head>
+<body>
+<div>
+<h1>Displaying All Food Items</h1>
+<table >
+<tr>
+<th>ItemId</th>
+<th>Name</th>
+<th>price</th>
+<th>Photo</th>
+<th>Choose</th>
+</tr>
+<tr th:each="reg : ${list}">
+<td th:text="${reg.oid}"></td>
+<td th:text="${reg.items}"></td>
+<td th:text="${reg.price}"></td>
+<td th:text="${reg.imagename}"></td>
+<td> <input type="radio" name="n1"></td>
+</tr>
+</table>
+<form action="order">
+Enter Quantity::<input type="text" placeholder="Qunatity">
+<input type="submit" value="Order">
+</form>
+</div>
+</body>
+</html>

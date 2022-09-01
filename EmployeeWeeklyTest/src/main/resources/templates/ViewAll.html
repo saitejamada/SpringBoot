@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color: lightblue}
+*{font-family: cursive;font-size:22px}
+#super{display: flex}
+</style>
+</head>
+<body>
+<h1>Displaying All Employees Details</h1>
+<table border=5px>
+<tr>
+<th>employeeid</th>
+<th>username</th>
+<th>name</th>
+<th>address</th>
+<th>mobileno</th>
+<th>email</th>
+<th>salary</th>
+<th>action</th>
+</tr>
+<tr th:each="reg : ${list}">
+<td th:text="${reg.employeeid}"></td>
+<td th:text="${reg.username}"></td>
+<td th:text="${reg.name}"></td>
+<td th:text="${reg.address}"></td>
+<td th:text="${reg.mobileno}"><</td>
+<td th:text="${reg.email}"></td>
+<td th:text="${reg.salary}"></td>
+<td>
+<a th:href="@{/update/{username}(username=${reg.username})}">Edit</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

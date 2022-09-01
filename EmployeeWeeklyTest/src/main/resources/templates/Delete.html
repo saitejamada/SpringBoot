@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Deletion Application</h1>
+<div>
+<form action="#" th:action="@{/del}" th:object="${cs}" >
+<div>
+<label>Username</label>
+<input type="text" th:field="*{username}"/><br/>
+<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">UserID error</span>
+</div>
+<input type="submit" value="submit">
+</form>
+</div>
+</body>
+</html>

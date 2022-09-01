@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UserController.java&apos; to &apos;EmployeePostman/src/main/java/com.emp.controller&apos;&#x0D;&#x0A;- Original project: &apos;EmployeeRestAppUsingJPA&apos;&#x0D;&#x0A;- Destination element: &apos;EmployeePostman/src/main/java/com.emp.controller&apos;&#x0D;&#x0A;- Original element: &apos;com.employee.controller.UserController.java&apos;" description="Copy compilation unit" destination="=EmployeePostman/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.emp.controller" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.employee.controller{UserController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1650357609987" units="1" version="1.0"/>
+</session>

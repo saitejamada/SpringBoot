@@ -1,0 +1,80 @@
+package com.post.service;
+
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.post.model.Post;
+
+import org.springframework.http.ResponseEntity;
+
+
+@Service
+public class PostService {
+
+	
+	private RestTemplate restTemplate;
+
+	public PostService(RestTemplate restTemplate) {
+		super();
+		this.restTemplate = restTemplate;
+	}
+	
+	public List<Post>getAllPosts(){//this method will fetch the data from the url 
+		String url="https://jsonplaceholder.typicode.com/posts";
+		Post[] post=restTemplate.getForObject(url,Post[].class);
+		return Arrays.asList(post);
+	}
+
+	public Post getOnePost(int id) {//this method will fetch only selected data from the url
+		String url="https://jsonplaceholder.typicode.com/posts/"+id;
+		Post post=restTemplate.getForObject(url,Post.class);
+		return post;
+	}
+	
+	public  ResponseEntity<Post> addPost(Post p)  {//this method will post the data to the url
+		 URI uri = null;
+		try {
+			uri = new URI("https://jsonplaceholder.typicode.com/posts");
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+		 HttpEntity<Post> entity=new HttpEntity<Post>(p,null);
+		 ResponseEntity<Post> response=restTemplate.exchange(uri,HttpMethod.POST,entity,Post.class);
+		 return response;
+		 
+	}
+	
+	public ResponseEntity<Post> putPost(Post p,int id) {
+		URI uri = null;
+		try {
+			uri = new URI("https://jsonplaceholder.typicode.com/posts/"+id);
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 ResponseEntity<Post> entity=restTemplate.getForEntity(uri,Post.class);
+		 ResponseEntity<Post> response=restTemplate.exchange(uri,HttpMethod.PUT,entity,Post.class);
+		 return response;
+	}
+	
+	public ResponseEntity<Post> deletePost(int id)  {
+		URI uri = null;
+		try {
+			uri = new URI("https://jsonplaceholder.typicode.com/posts/"+id);
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ResponseEntity<Post> entity=restTemplate.getForEntity(uri,Post.class);
+		ResponseEntity<Post> response=restTemplate.exchange(uri,HttpMethod.DELETE,entity,Post.class);
+		return response;
+	}
+}

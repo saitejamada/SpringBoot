@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;SpringbootAssignment&apos; to &apos;PostRestTemplate&apos;" description="Rename resource &apos;SpringbootAssignment&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SpringbootAssignment" name="PostRestTemplate" stamp="1653539297608" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;PostRestTemplate&apos; to &apos;PostRestTemplateApplication&apos;" description="Rename resource &apos;PostRestTemplate&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/PostRestTemplate" name="PostRestTemplateApplication" stamp="1653541671983" updateReferences="true"/>
+</session>
